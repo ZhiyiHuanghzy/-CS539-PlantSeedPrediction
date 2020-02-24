@@ -6,6 +6,11 @@ Weinan Zhi, Yang Mo, Lei Ma, Zhiyi Huang, Yueqin Liang
 
 
 ## Project Description
+1.Plant image identification has become an inter-discipline of botany and computer vision.
+
+2.This is a technical trend.  
+
+3.our project is a cross-border collaboration between plants and machine learning, we use different models to identify a plant from a seed.
 
 ## Dataset
 ### Plant Seedlings Dataset
@@ -45,9 +50,52 @@ The final output should consists of the following five files:
 
 ### Data Segmentation
 [Segmented Data](https://drive.google.com/drive/folders/19Px2relPjxfPZWV7UGHchqaqXX8RZBRc?usp=sharing)
+![output_files](segdata.png)
 
 ## Transfer Learning of Image Classification
+**Things we need to notice:**
+
+Modify the model structure to fit your task
+
+Then fine tune the network
+
+**Issue:**
+
+Catastrophic forgetting
+
+After you tune the network, you may lose all the knowledge pre-trained.
+
+**Solutions:**
+
+Conservative Training
+
+Layer Transfer
+
+**Module:**
+1. ResNet18:
+![output_files](resnet18.png)
+
+2.DenseNet121:
+Compared with RESNET, densenet proposes a more radical dense connection mechanism: that is, all layers are connected to each other, especially, each layer will accept all the previous layers as its additional input.
+
+![output_files](densenet121.png)
+
+The network structure of densenet is mainly composed of denseblock and transition.
+In denseblock, each layer has the same characteristic map size and can be connected in the channel dimension.
+
+![output_files](densenet121_.png)
 
 ## Experiments
+
+![output_files](condition.png)
+![output_files](result.png)
+
+Segmented data performed  better on ResNet18.
+
+Segmented data  and original data performed  almost same  on Densenet121.
+
+Densenet121 performed better than ResNet18
+
+
 
 
